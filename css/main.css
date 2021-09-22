@@ -1,0 +1,218 @@
+:root {
+  /* Primary colors */
+  --red: hsl(0, 78%, 62%);
+  --cyan: hsl(180, 62%, 55%);
+  --orange: hsl(34, 97%, 64%);
+  --blue: hsl(212, 86%, 64%);
+  /* Neutral colors */
+  --dark-blue: hsl(234, 12%, 34%);
+  --gray-blue: hsl(229, 6%, 66%);
+  --light-gray: hsl(0, 0%, 98%);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  background-color: var(--light-gray);
+}
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+}
+header {
+  text-align: center;
+  padding: 20px;
+}
+header h1 {
+  color: var(--dark-blue);
+  margin-bottom: 20px;
+}
+header h1 span {
+  color: var(--gray-blue);
+  font-weight: 200;
+}
+header p {
+  color: var(--gray-blue);
+  width: 430px;
+  margin: 0 auto;
+  line-height: 2;
+}
+@media (max-width: 767px) {
+  header {
+    margin: 0 auto;
+  }
+  header h1 {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+  header p {
+    width: 300px;
+    line-height: 1.6;
+  }
+}
+.main-container {
+  width: 90vw;
+  margin: 0 auto;
+}
+/* Small screens */
+@media (min-width: 768px) {
+  .main-container {
+    width: 750px;
+  }
+}
+/* Medium screens */
+@media (min-width: 992px) {
+  .main-container {
+    width: 970px;
+  }
+}
+/* Large screens */
+@media (min-width: 1200px) {
+  .main-container {
+    width: 1170px;
+  }
+}
+@media (min-width: 2500px) {
+  .main-container {
+    width: 2400px;
+  }
+}
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(230px, 1fr));
+  grid-template-rows: repeat(4, 1fr);
+  gap: 20px;
+  height: 55vh;
+}
+@media (min-width: 2500px) {
+  .container {
+    grid-template-columns: repeat(3, minmax(700px, 1fr));
+  }
+  header {
+    margin: 0 auto;
+  }
+  header h1 {
+    font-size: 55px;
+    margin-bottom: 20px;
+  }
+  header p {
+    width: 650px;
+    line-height: 2;
+    font-size: 25px;
+  }
+}
+@media (max-width: 767px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: 90vh;
+    gap: 25px;
+  }
+}
+.super,
+.team,
+.karma,
+.calculator {
+  background-color: white;
+  position: relative;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 5px 5px 1px var(--gray-blue);
+}
+@media (min-width: 2500px) {
+  .card-h,
+  .card-p {
+    font-size: 35px;
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 767px) {
+  .super,
+  .team,
+  .karma,
+  .calculator {
+    height: 20vh;
+  }
+}
+.card-h {
+  color: var(--dark-blue);
+}
+.card-p {
+  color: var(--gray-blue);
+}
+.super {
+  grid-area: 2/1/4/2;
+}
+.team {
+  grid-area: 1/2/3/3;
+}
+.karma {
+  grid-area: 3/2/5/3;
+}
+.calculator {
+  grid-area: 2/3/4/4;
+}
+.super img,
+.team img,
+.karma img,
+.calculator img {
+  width: 45px;
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+}
+@media (min-width: 2500px) {
+  .super img,
+  .team img,
+  .karma img,
+  .calculator img {
+    width: 100px;
+    right: 30px;
+    bottom: 30px;
+  }
+}
+.super::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  background-color: var(--cyan);
+  height: 2px;
+}
+.team::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  background-color: var(--red);
+  height: 2px;
+}
+.karma::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  background-color: var(--orange);
+  height: 2px;
+}
+.calculator::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  background-color: var(--blue);
+  height: 2px;
+}
+footer {
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 15px;
+}
